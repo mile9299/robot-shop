@@ -1,0 +1,33 @@
+pipeline:
+  identifier: Build_mile9299_robot_shop_1705124751550
+  name: Build robot-shop
+  orgIdentifier: default
+  projectIdentifier: Robot
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1705071778847
+        repoName: mile9299/robot-shop
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    command: echo hello world
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
